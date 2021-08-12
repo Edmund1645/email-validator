@@ -3,12 +3,12 @@
 ## Installation
 With NPM
 ```
-npm install
+npm install https://github.com/Edmund1645/email-validator
 ```
 
 With Yarn
 ```
-yarn add
+yarn add https://github.com/Edmund1645/email-validator
 ```
 
 ## Quick Example

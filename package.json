@@ -12,7 +12,7 @@
     "lint": "vue-cli-service lint"
   },
   "gitHooks": {
-    "pre-commit": "npm run bundle"
+    "pre-commit": "npm run bundle && git add ."
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -2,13 +2,17 @@
   "name": "email-validator",
   "version": "0.1.0",
   "private": true,
-  "main": "./src/plugin/email-validator",
+  "main": "./bundle/email-validator.umd.js",
   "scripts": {
+    "bundle": "vue-cli-service build --dest bundle --target lib src/plugin/email-validator/index.ts",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
+  },
+  "gitHooks": {
+    "pre-commit": "bundle"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -32,6 +36,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
     "typescript": "~4.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "yorkie": "^2.0.0"
   }
 }

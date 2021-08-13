@@ -1,8 +1,8 @@
 import Vue from "vue";
 import ValidatorComponent from "./Component.vue";
 
-export default function (_Vue: typeof Vue): void {
-  _Vue.component("email-validator", ValidatorComponent);
+export function install(_Vue: typeof Vue): void {
+  _Vue.component("EmailValidator", ValidatorComponent);
 }
 
-export const EmailValidator = ValidatorComponent;
+export default ValidatorComponent; // for use in sfcs

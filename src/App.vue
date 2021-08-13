@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import EmailValidator from "@/plugin/email-validator/Component.vue";
+import EmailValidator from "@/plugin/email-validator/";
 
 export default Vue.extend({
   name: "App",

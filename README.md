@@ -10,7 +10,33 @@ With Yarn
 ```
 yarn add https://github.com/Edmund1645/email-validator
 ```
+<!-- TODO: add installation options -->
+## Usage
+### As plugin
+```js
+// main.js
+import * as EmailValidator from "email-validator";
 
+Vue.use(EmailValidator)
+```
+Then you can just reference the component in yours without any further registration.
+
+### Import into components
+```vue
+<template>
+  <!--  -->
+</template>
+
+<script>
+import EmailValidator from "email-validator";
+export default{
+  name: 'Form',
+  component: {
+    EmailValidator,
+  }
+}
+</script>
+```
 ## Quick Example
 ```vue
 <template>
@@ -22,7 +48,7 @@ yarn add https://github.com/Edmund1645/email-validator
 
 
 <script>
-import EmailValidator from "@/plugin/email-validator/Component.vue";
+import {EmailValidator} from "@/plugin/email-validator/Component.vue";
 
 export default {
   name: "Form",

@@ -73,4 +73,14 @@ describe("ValidatorComponent", () => {
     expect(mockDebounceMethod).toHaveBeenCalled();
     jest.restoreAllMocks();
   });
+  it("should autocorrect the email with the suggestion", async () => {
+    const autocorrect = "autocorrect@example.com";
+    await wrapper.setData({ autocorrect });
+
+    const autocorrectButton = wrapper.find("button.ev-autocorrect-button");
+
+    expect(autocorrectButton.exists()).toBe(true);
+    await autocorrectButton.trigger("click");
+    expect(wrapper.emitted().input?.[0]).toEqual([autocorrect]);
+  });
 });

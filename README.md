@@ -48,7 +48,7 @@ export default{
 
 
 <script>
-import {EmailValidator} from "@/plugin/email-validator/Component.vue";
+import EmailValidator from "email-validator";
 
 export default {
   name: "Form",
@@ -74,6 +74,7 @@ export default {
 };
 </script>
 ```
+Click [here](./src/App.vue) to see full implementation
 
 ## Documentation
 
@@ -105,6 +106,8 @@ To contribute to this project.
 - Fork the repository
 - Install dependencies
 - Create your own branch, an ideal branch would be: `feature-your_github_username`
+- Run tests in watch mode: `npm run test:unit -- --watch`
+- Start development server `npm run serve`
 - Write tests for your feature in `/tests` (TDD approach)
 - Build out your feature
 - Create a pull request 🎉

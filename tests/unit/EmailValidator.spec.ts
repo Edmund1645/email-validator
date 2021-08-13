@@ -48,11 +48,29 @@ describe("ValidatorComponent", () => {
     expect(wrapper.vm.isValidPattern).toBe(false);
   });
 
-  // it("should validate with Abstract API if local validation was successful", () => {
-  //   const mockMethod = jest.spyOn(ValidatorComponent.$options.methods, "validateWithAbstract");
-  //   expect(mockMethod).toHaveBeenCalled();
-  //   mockMethod.mockRestore();
-  // });
+  it("should emit a valid event to know when email is correct or not", async () => {
+    await wrapper.setProps({ email: "hello@example.com" });
+    expect(wrapper.emitted().valid).toBeTruthy();
+  });
 
-  // user can clear input field
+  it("should be able to clear the input field", async () => {
+    await wrapper.setProps({
+      clearable: true,
+    });
+
+    const button = wrapper.find("button");
+    expect(button.exists()).toBe(true);
+    await button.trigger("click");
+    expect(wrapper.emitted().input?.[0]).toEqual([""]); // emits an empty string to clear field
+  });
+
+  it("should validate with Abstract API if local validation was successful", async () => {
+    jest.spyOn(wrapper.vm, "validateWithAbstract");
+    const mockDebounceMethod = jest.spyOn(wrapper.vm, "debounce");
+
+    await wrapper.setProps({ email: "hell@example.com", apiKey: "test_api_key" });
+
+    expect(mockDebounceMethod).toHaveBeenCalled();
+    jest.restoreAllMocks();
+  });
 });

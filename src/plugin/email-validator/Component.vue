@@ -125,7 +125,7 @@ export default Vue.extend({
         this.validatingWithAbstract = false;
       } catch (err) {
         this.validatingWithAbstract = false;
-        console.log(err);
+        throw new Error(err);
       }
     },
     useAutocorrect() {

@@ -1,5 +1,7 @@
 # Email validation component for Vue2
 
+[![Run tests](https://github.com/Edmund1645/email-validator/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/Edmund1645/email-validator/actions/workflows/quality-checks.yaml)
+
 ## Installation
 With NPM
 ```
